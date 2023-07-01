@@ -218,7 +218,7 @@ li  > button {
     background-color: #ececec;
     color: #0f0f0f;
     display: grid;
-    grid-template-columns: 5fr minmax(300px, 1fr);
+    grid-template-columns: 5fr 325px;
     grid-template-rows: 50px 1fr 50px 1fr;
     column-gap: 10px;
 }
