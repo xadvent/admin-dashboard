@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
 }
+a {
+    text-decoration: none;
+    color: #0f0f0f;
+}
 body, html {
     height: 100%;
     width: 100%;
@@ -302,5 +306,31 @@ li  > button {
     margin-right: 20px;
     margin-bottom: 40px;
     border-radius: 10px;
+    padding: 30px 15px;
     box-shadow: 0px 1px 3px  grey;
+    display: grid;
+    grid-template-rows: repeat(3, minmax(1fr, 400px));
+    grid-template-columns: 1fr;
+    row-gap: 5px;
+}
+.boxtext {
+    overflow: scroll;
+    font-size: small;
+    width: minmax(25ch, 40ch);
+    height: 7ch;
+}
+.announcementsbox a:hover,
+.trendingbox a:hover {
+    color:#84acc8;
+}
+.trendingnow img {
+    border-radius: 100px;
+    width: 60px;
+    margin-right: 10px;
+}
+
+.trendingnow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
