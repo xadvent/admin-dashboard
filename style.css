@@ -10,15 +10,19 @@ body, html {
 }
 button {
     cursor: pointer;
-    transition: 0.15s;
+    transition: .15s;
 }
 button:hover {
-    scale: .96;
+    scale: 0.96;
+    background-color: #84acc8;
 }
-
+button:active {
+    scale: 0.9;
+    background-color: #4c9bd3;
+}
 .gridcontainer {
     display: grid;
-    grid-template: 75px 100px 10fr / minmax(200px, 1fr) 9fr;
+    grid-template: 75px 100px 10fr / 2fr 9fr;
     width: 100%;
     height: 100%;
 }
@@ -87,13 +91,13 @@ form {
 .rightheader {
     margin-right: 20px;
     display: flex;
-    gap: 25px;
+    gap: 30px;
     justify-content: space-around;
     align-items: center;
 }
-.rightheader h2 {
+.rightheader h3 {
     position: relative;
-    right: 10px;
+    right: 15px;
 }
 .rightheader img {
     width: 20px;
@@ -115,15 +119,16 @@ form {
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
+    gap: 15px;
     margin-right: 20px;
 }
 li  > button {
-    padding: 10px;
+    padding: 10px 15px;
     color: #FBFBFB;
-    background-color: #406E8E;
-    border-radius: 15px;
-    width: 100px;
+    background-color: #4c9bd3;
+    border-radius: 25px;
+    width: 120px;
+    height: 50px;
     border: 1.5px solid white;
     align-items: center;
 }
@@ -145,21 +150,31 @@ li  > button {
 
 .sidebar {
     grid-area: 1 / 1 / -1 / 2;
-    color: #FBFBFB;
-    background-color: #406e8e;
+    color: #fff;
+    background-color: #4c9bd3;
     display: grid;
     grid-template-rows: 100px 1fr 1fr 30%;
     gap: 30px;
 }
-
+.topsidebar img,
+.bottomsidebar img {
+    width: 30px;
+    margin-right: 10px;
+    color: #fff;
+    filter: invert(100%);
+    position: relative;
+    top: 7px;
+}
 .dashboard {
     display: flex;
     align-items: center;
     gap: 10px;
-    justify-content: center;
+    justify-content: start;
+    margin-left: 20px;
+    margin-right: 10px;
 }
 .gridlogo > div {
-    background-color: #ececec;
+    background-color: #fff;
 }
 .gridlogo {
     display: grid;
@@ -176,33 +191,39 @@ li  > button {
 }
 .sidebar ul {
     display: grid;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     align-content: center;
     gap: 30px;
-    margin-left: 50px;
+    margin-left: 20px;
 }
+
 .bottomsidebar {
     margin-top: 80px;
 }
 .sidebar a {
     text-decoration: none;
-    color: #ececec;
+    color: #fff;
     font-size: 18px;
     font-weight: bolder;
+}
+.sidebar a:hover {
+    color: rgb(184, 221, 252);
+    transition: 0.08s;
 }
 .largecontainer {
     background-color: #ececec;
     color: #0f0f0f;
     display: grid;
-    grid-template-columns: 5fr 2fr;
+    grid-template-columns: 5fr minmax(300px, 2fr);
     grid-template-rows: 50px 1fr 50px 1fr;
     column-gap: 10px;
 }
 .projects {
     grid-area: 2 / 1 / -1 / -2;
     display: grid;
-    grid-auto-rows: 1fr;
+    grid-auto-rows: (minmax(1fr, 300px));
     grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-template-rows: repeat(3, (minmax(1fr, 300px)));
     column-gap: 20px;
     row-gap: 10px;
     margin-left: 10px;
@@ -212,6 +233,9 @@ li  > button {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 1px 3px  grey;
+    display: grid;
+    grid-template: 1fr 50px/ 10px 1fr;
+    column-gap: 15px;
 }
 .announceboxtitle {
     grid-area: 1 / 2 ;
@@ -227,5 +251,56 @@ li  > button {
     margin-left: 20px;
     align-self: end;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight:500;
+}
+.line {
+    background-color: #5a78fd;
+    grid-area: 1 / 1 / -1;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.info {
+    margin-top: 25px;
+}
+.info .name {
+    font-size: 18px;
+    color: #5a78fd;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.info .projtext {
+    overflow:scroll;
+    height: 18ch;
+    width: minmax(25ch, 50ch);
+    font-size: 15px;
+    padding-right: 15px;
+}
+
+.sharing {
+    margin-left: 55%;
+    margin-right: 20px;
+}
+.sharing ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+.sharing li {
+    display: inline-block;
+}
+.sharing li img {
+    width: 25px;
+    margin-top: 5px;
+}
+
+
+.announcementsbox, 
+.trendingbox {
+    background-color: #fff;
+    margin-right: 20px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px  grey;
 }
